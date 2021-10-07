@@ -3,7 +3,7 @@ import { UserIcon } from "@heroicons/react/solid";
 import { Dialog, Transition } from "@headlessui/react";
 import axios from "axios";
 
-const Navbar = () => {
+const Navbar = ({ passResults }: any) => {
   let [isOpen, setOpen] = useState(false);
 
   const [values, setValue] = useState({
@@ -41,6 +41,7 @@ const Navbar = () => {
     try {
       const response = await axios.post<any>("/api/photo/search", { search });
       const result = await response.data;
+      passResults(result);
     } catch (e: any) {
       console.log(e.message);
     }
