@@ -2,7 +2,7 @@
 
 A Next.js (TypeScript) solution for the [My Unsplash Challenge](https://devchallenges.io/challenges/rYyhwJAxMfES5jNQ9YsP) on [devChallenges](https://devchallenges.io/).
 
-Live demo (version) available at:
+Live demo (version) available at: https://my-unsplash-delta.vercel.app/
 
 ## Description
 
