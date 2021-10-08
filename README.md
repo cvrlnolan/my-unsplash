@@ -1,4 +1,4 @@
-# My Unplash
+# My Unsplash
 
 A Next.js (TypeScript) solution for the [My Unsplash Challenge](https://devchallenges.io/challenges/rYyhwJAxMfES5jNQ9YsP) on [devChallenges](https://devchallenges.io/).
 
