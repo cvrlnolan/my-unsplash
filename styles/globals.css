@@ -18,3 +18,67 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.main_container {
+  @apply flex flex-col min-h-screen justify-between p-6;
+}
+
+.navbar_wrapper {
+  @apply flex flex-wrap md:justify-between w-full p-6;
+}
+
+.navbar_logo {
+  @apply flex w-full md:w-3/4 lg:w-3/5 space-x-4;
+}
+
+.navbar_search {
+  @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:ring-2 focus:ring-blue-200 focus:outline-none focus:bg-white focus:border-blue-500;
+}
+
+.navbar_button {
+  @apply bg-green-500 hover:bg-green-700 focus:ring-4 focus:ring-green-200 text-white tracking-tight font-semibold py-2 px-4 shadow-lg rounded-lg transition duration-300;
+}
+
+.navbar_modal_container {
+  @apply inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl;
+}
+
+.navbar_modal_input {
+  @apply shadow bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500;
+}
+
+.modal_cancel_button {
+  @apply inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-900 shadow bg-gray-100 border border-transparent rounded-md hover:bg-gray-200 focus:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-gray-500;
+}
+
+.modal_submit_button {
+  @apply inline-flex justify-center px-4 py-2 text-sm font-medium text-green-900 shadow bg-green-100 border border-transparent rounded-md hover:bg-green-200 focus:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500;
+}
+
+.page_grid_layout {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+.delete_wrapper {
+  @apply absolute w-full h-full px-2.5 py-2.5 bottom-0 inset-x-0 bg-transparent cursor-pointer text-opacity-0 hover:text-opacity-100 text-white text-xs md:text-base text-center truncate leading-4 transition duration-300;
+}
+
+.delete_button {
+  @apply rounded-xl appearance-none float-right p-2 hover:bg-red-400 transition duration-300;
+}
+
+.image_modal_container {
+  @apply inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl;
+}
+
+.image_modal_cancel {
+  @apply inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-900 shadow bg-gray-100 border border-transparent rounded-md hover:bg-gray-200 focus:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-gray-500;
+}
+
+.image_modal_submit {
+  @apply inline-flex justify-center px-4 py-2 text-sm font-medium text-red-900 shadow bg-red-100 border border-transparent rounded-md hover:bg-red-200 focus:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-red-500;
+}
+
+.image_modal_input {
+  @apply shadow bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500;
+}

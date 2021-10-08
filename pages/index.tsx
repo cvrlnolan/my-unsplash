@@ -3,8 +3,10 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import axios from "axios";
 import useSWR from "swr";
+import Container from "@/components/layout/container";
 import Navbar from "@/components/layout/navbar";
 import ImageCard from "@/components/image/imageCard";
+import LoadingCard from "@/components/layout/loadingCard";
 
 const Home: NextPage = () => {
   const [results, setResults] = useState<any>();
@@ -16,7 +18,9 @@ const Home: NextPage = () => {
   if (error) {
     return (
       <>
-        <div>{error.message}</div>
+        <Container>
+          <p className="text-center tracking-tight">{error.message}</p>
+        </Container>
       </>
     );
   }
@@ -24,7 +28,13 @@ const Home: NextPage = () => {
   if (!data) {
     return (
       <>
-        <div>Loading...</div>
+        <Container>
+          <div className="page_grid_layout">
+            {[...Array(10)].map((e, i) => (
+              <LoadingCard key={i} />
+            ))}
+          </div>
+        </Container>
       </>
     );
   }
@@ -39,22 +49,23 @@ const Home: NextPage = () => {
       <Head>
         <title>My Unsplash</title>
       </Head>
-      <div className="flex flex-col min-h-screen justify-between p-6">
+      <Container>
         <Navbar passResults={getResults} />
-        {results.length > 0 && (
+        {results && (
           <>
-            <p className="text-center font-bold my-2">Search Results</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {results.length > 0 && (
+              <p className="text-center font-bold my-2 tracking-tight">
+                Search Results
+              </p>
+            )}
+            <div className="page_grid_layout">
               {results.map((photo: any) => (
                 <ImageCard key={photo._id} photo={photo} />
               ))}
             </div>
           </>
         )}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {/* {[...Array(10)].map((e, i) => (
-            <ImageCard key={e} />
-          ))} */}
+        <div className="page_grid_layout">
           {data.map((photo: any) => (
             <ImageCard key={photo._id} photo={photo} />
           ))}
@@ -74,7 +85,7 @@ const Home: NextPage = () => {
             </p>
           </div>
         </footer>
-      </div>
+      </Container>
     </>
   );
 };

@@ -1,34 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Unplash
 
-## Getting Started
+A Next.js (TypeScript) solution for the [My Unsplash Challenge]() on [devChallenges]().
 
-First, run the development server:
+Live demo (version) available at:
+
+## Description
+
+This project was built to complete all the user stories listed or described by the challenge itself. Hence in this project, a user can:
+
+- See a list of photos in the masonry layout that they have added.
+- Add a new photo to the list - the new photo should be on top of the list.
+- Search for photos by label.
+- Hover a photo, and can see a label and a delete button.
+- Delete images.
+
+## Installation
+
+1. To get this project files locally on your machine, you can clone this repository by running the following command on your terminal or command line:
 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/cvrlnolan/my-unsplash
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Next, you need to setup the .env file found in the root with the appropriate API Keys & credentials from the following service providers:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- [MongoDB Atlas](https://cloud.mongodb.com/)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Install all the dependency packages found in the `package.json` file by running `yarn install` or `npm install` from the project root directory.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+4. Initialize `tailwindcss` by running `npx tailwindcss init -p` to generate the `tailwind.config.js` and `postcss.config.js` configuration files.
 
-## Learn More
+5. To start the development server of the application, run `npm run dev` or `yarn dev`. This should log some start-up application information & display the development server url: `http://localhost:3000`. Visit http://localhost:3000 to view your application.
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### General
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This application was built reflecting the MVC architecture and the main dependencies(all found in the package.json) of the application are organised as so:
 
-## Deploy on Vercel
+- Front-end User Interface(UI): [Tailwind CSS](https://tailwindcss.com/)
+- Backend Integration: [Next.js API](https://nextjs.org/docs/api-routes/introduction)
+- Database Management: [MongoDB](https://mongodb.com/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Other important services & dependency libraries of the application include:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [axios](https://www.npmjs.com/package/axios): An http client to fetch urls and make api calls or requests within the application.
+- [swr](https://swr.vercel.app/): To fetch and revalidate data on the client-side of the application while keeping the UI reactive.
+
+### Directives
+
+The application is organized from the root(`.`) as follows:
+
+- `./page/` folder(integrated by NextJS) contains the UI Views for the application with the exception of the `./page/api/*` sub-folder.
+- `./lib/` folder contains the Firebase initialization configuration file.
+- `./components/` folder contains coded UI layouts to be used through out the application.
+- `./styles/` folder(integrated by NextJS) contains the global style of the application in which Tailwindcss presets have been defined. The global stylesheet is accessible by all components.
+- `./public/` folder(integrated by NextJS) contains global files to be shared through the application. You can store static images here.
+
+Absolute imports to any of these folders through the application are configured in the `tsconfig.json` file in the root.
+
+### Deployment
+
+You may eventually want to deploy a live version of your app in a future instance. [Vercel](https://vercel.com/) platform is suitably built fo the deployment of NextJS application and more as they have an integrated environment to deploy directly from your own [Github Repository](https://github.com/new).
+
+## Support
+
+If any worries, bugs or problem arises in the future, you can create an issue, contribute or contact me via:
+
+- carlnolan@lootyclub.com
+
+## License
+
+![GitHub](https://img.shields.io/github/license/cvrlnolan/my-unsplash) ![GitHub contributors](https://img.shields.io/github/contributors/cvrlnolan/my-unsplash) ![GitHub last commit](https://img.shields.io/github/last-commit/cvrlnolan/my-unsplash) ![GitHub issues](https://img.shields.io/github/issues/cvrlnolan/my-unsplash) ![GitHub repo size](https://img.shields.io/github/repo-size/cvrlnolan/my-unsplash)
+
+![GitHub followers](https://img.shields.io/github/followers/cvrlnolan?style=social) ![Twitter Follow](https://img.shields.io/twitter/follow/realcarlnolan?style=social)
